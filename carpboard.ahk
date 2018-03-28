@@ -3,35 +3,44 @@
 #SingleInstance FORCE
 #InstallKeybdHook
 
+; KeyHistory ; uncomment this line if some hotkey is giving you trouble and you need to review scancodes
+
 SetCapslockState AlwaysOff
 ; bound everything to Capslock because the fn key isn't a real key that sends keystrokes :/
 ; and i am a very quiet man anyway
 
-Capslock & SC028::SEND ´ ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
-Capslock & c::SEND ¢
-Capslock & e::SEND ∈
-Capslock & s::SEND §
-Capslock & =::SEND ≈
-Capslock & 0::SEND ∞
-Capslock & SC035::SENDINPUT ¯\_(ツ)_/¯ ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
-Capslock & `::SEND “
-Capslock & o::SEND °
-Capslock & Insert::SENDINPUT % ToFilename(Clipboard)
+#If Getkeystate("Capslock","p")
+SC028::SEND ´ ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
+c::SEND ¢
+e::SEND ∈
+s::SEND §
+=::SEND ≈
+0::SEND ∞
+SC035::SENDINPUT ¯\_(ツ)_/¯ ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
+`::SEND “
+o::SEND °
+f::SEND (
+j::SEND )
+Space::SEND -
+Insert::SENDINPUT % ToFilename(Clipboard)
 
-#If Getkeystate("Shift","p") ;if shift is held the following hotkeys are active.
-Capslock & `::SEND ¬
-Capslock & !::SEND ¡
-Capslock & a::SEND ∀
-Capslock & -::SEND ¯
-Capslock & e::SEND ∃
-Capslock & s::SEND ∫
-Capslock & <::SEND ←
-Capslock & >::SEND →
-Capslock & "::SEND ”
-Capslock & {::SEND ‘
-Capslock & }::SEND ’
-Capslock & ?::SENDINPUT ¿
-;note to self, add a way to toggle upcase
+; these are the ones that require you to hold shift
+; #If Getkeystate("Capslock","p") and Getkeystate("Shift","p") failed mysteriously,
+; so we're just going to use the 2-key hotkey feature
+Shift & `::SEND ¬
+Shift & !::SEND ¡
+Shift & A::SEND ∀
+Shift & -::SEND ¯
+Shift & e::SEND ∃
+Shift & s::SEND ∫
+Shift & <::SEND ←
+Shift & >::SEND →
+Shift & SC028 ::SEND ” ; sc035 in place of a literal " or '
+Shift & {::SEND ‘
+Shift & }::SEND ’
+Shift & SC035::SENDINPUT ¿ ; sc035 in place of a literal ? or /
+Shift & Space::SEND _ 
+Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 
 ToFilename(s){
 StringLower, tmp, s
@@ -48,3 +57,8 @@ tmp := RegExReplace(tmp, "^\s*")
 tmp := RegExReplace(tmp, "\s*$")
 return tmp
 }
+
+ToUpper(s){
+StringUpper, tmp, s
+return tmp
+} ; well, that was easy!
