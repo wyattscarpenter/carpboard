@@ -35,7 +35,7 @@ Shift & e::SEND ∃
 Shift & s::SEND ∫ ; on my comptuer this jams if you use left shift, so use right shift
 Shift & <::SEND ←
 Shift & >::SEND →
-Shift & SC028 ::SEND ” ; sc035 in place of a literal " or '
+Shift & SC028::SEND ” ; sc028 in place of a literal " or '
 Shift & {::SEND ‘
 Shift & }::SEND ’
 Shift & SC035::SENDINPUT ¿ ; sc035 in place of a literal ? or /
