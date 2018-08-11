@@ -56,7 +56,7 @@ tmp := StrReplace(tmp, ".", " ")
 tmp := StrReplace(tmp, "ü", "ue") ; these are for german umlauts, but might collide with diaereses
 tmp := StrReplace(tmp, "ö", "oe")
 tmp := StrReplace(tmp, "ä", "ae")
-tmp := RegExReplace(tmp, "\$(\d*).(\d*)", Replacement := " $1 dollars $2 cents ")
+tmp := RegExReplace(tmp, "\$(\d*)\.(\d*)", Replacement := " $1 dollars $2 cents ")
 tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
 tmp := RegExReplace(tmp, "\s+", Replacement := " ")
 tmp := RegExReplace(tmp, "[^\w\ \-]", "")
