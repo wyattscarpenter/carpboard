@@ -17,10 +17,15 @@ s::SEND §
 =::SEND ≈
 0::SEND ∞
 SC035::SENDINPUT ¯\_(ツ)_/¯ ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
+\::SENDINPUT ¯\\\_(ツ)\_/¯
 `::SEND “
 o::SEND °
 f::SEND (
 j::SEND )
+v::SEND ∨
+.::SEND ∴
+,::SEND ∵
+x::SEND ×
 Space::SEND -
 Insert::SENDINPUT % ToFilename(Clipboard)
 
@@ -32,6 +37,7 @@ Shift & !::SEND ¡
 Shift & A::SEND ∀
 Shift & -::SEND ¯
 Shift & e::SEND ∃
+Shift & =::SEND ≡
 Shift & s::SEND ∫ ; on my comptuer this jams if you use left shift, so use right shift
 Shift & <::SEND ←
 Shift & >::SEND →
@@ -40,6 +46,9 @@ Shift & {::SEND ‘
 Shift & }::SEND ’
 Shift & SC035::SENDINPUT ¿ ; sc035 in place of a literal ? or /
 Shift & Space::SEND _ 
+Shift & ^::SEND ∧
+Shift & *::SEND ⋅
+Shift & O::SEND ∘
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 
 ToFilename(s){
