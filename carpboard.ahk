@@ -11,6 +11,7 @@ SetCapslockState AlwaysOff
 
 #If Getkeystate("Capslock","p")
 SC028::SEND ´ ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
+l::SEND ł
 c::SEND ¢
 e::SEND ∈
 s::SEND §
@@ -26,6 +27,7 @@ v::SEND ∨
 .::SEND ∴
 ,::SEND ∵
 x::SEND ×
+-::SEND ±
 Space::SEND -
 Insert::SENDINPUT % ToFilename(Clipboard)
 
@@ -50,6 +52,8 @@ Shift & ^::SEND ∧
 Shift & *::SEND ⋅
 Shift & O::SEND ∘
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
+Alt & D::SEND %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec%
+; Mon, 2020-01-13 08:21:01
 
 ToFilename(s){
 StringLower, tmp, s
