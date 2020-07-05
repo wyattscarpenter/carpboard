@@ -53,7 +53,7 @@ Shift & ^::SEND ∧
 Shift & *::SEND ⋅
 Shift & O::SEND ∘
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
-Alt & D::SEND %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec%
+Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec%
 ; Mon, 2020-01-13 08:21:01
 
 ToFilename(s){
