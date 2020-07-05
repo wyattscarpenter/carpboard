@@ -29,6 +29,7 @@ v::SEND ∨
 x::SEND ×
 -::SEND ±
 Space::SEND -
+Alt & Space::SEND % trim(Clipboard)
 Insert::SENDINPUT % ToFilename(Clipboard)
 
 ; these are the ones that require you to hold shift
@@ -83,3 +84,9 @@ ToUpper(s){
 StringUpper, tmp, s
 return tmp
 } ; well, that was easy!
+
+trim(s){
+s := RegExReplace(s, "^\s*")
+s := RegExReplace(s, "\s*$")
+return s
+}
