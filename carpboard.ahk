@@ -29,6 +29,8 @@ v::SEND ∨
 x::SEND ×
 -::SEND ±
 Space::SEND -
+m::SEND — ; em dash
+n::SEND – ; en dash
 Alt & Space::SEND % trim(Clipboard)
 Insert::SENDINPUT % ToFilename(Clipboard)
 
