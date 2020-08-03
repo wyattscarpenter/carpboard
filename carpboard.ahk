@@ -31,7 +31,7 @@ x::SEND ×
 Space::SEND -
 m::SEND — ; em dash
 n::SEND – ; en dash
-Alt & Space::SEND % trim(Clipboard)
+Alt & Space::SEND % respace(Clipboard)
 Insert::SENDINPUT % ToFilename(Clipboard)
 
 ; these are the ones that require you to hold shift
@@ -76,9 +76,7 @@ tmp := RegExReplace(tmp, "\$(\d*)\.(\d*)", Replacement := " $1 dollars $2 cents 
 tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
 tmp := RegExReplace(tmp, "\s+", Replacement := " ")
 tmp := RegExReplace(tmp, "[^\w\ \-]", "")
-tmp := RegExReplace(tmp, "\s+", Replacement := " ")
-tmp := RegExReplace(tmp, "^\s*")
-tmp := RegExReplace(tmp, "\s*$")
+tmp := respace(tmp)
 return tmp
 }
 
@@ -86,6 +84,12 @@ ToUpper(s){
 StringUpper, tmp, s
 return tmp
 } ; well, that was easy!
+
+respace(s){
+s := RegExReplace(s, "\s+", Replacement := " ")
+s := trim(s)
+return s
+}
 
 trim(s){
 s := RegExReplace(s, "^\s*")
