@@ -26,6 +26,7 @@ t::SEND † ; dagger
 v::SEND ∨ ; logical or
 x::SEND × ; cross (multiply)
 y::SEND þ ; why is the thorn bound to y? historical folly
+z::SEND ß ; Eszett from german (lowercase) bound to z because my s key was taken
 =::SEND ≈ ; approximately equal
 0::SEND ∞ ; infinity
 SC035::SENDINPUT ¯\_(ツ)_/¯ ; shruggie ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
@@ -37,19 +38,27 @@ Space::SEND - ; hyphen for programming in lisp faster
 .::SEND ∴ ; therefore
 ,::SEND ∵ ; because
 -::SEND ± ; plus or minus
+*::SEND ⁂ ; asterism
+Alt & a::SEND ã ; a with tilde from portuguese (lower case, you can shift-insert to uppercase remember?)
 Alt & b::SEND 🅱️ ; B emoji
 Alt & e::SEND 👀 ; eyes emoji
 Alt & f::SEND 🔥 ; fire emoji
 Alt & g::SEND 😬 ; grimmace emoji
 Alt & j::SEND 😂 ; joy emoji
 Alt & l::SEND 🕴️ ; levitating businessman emoji
+Alt & m::SEND 😏 ; smirk emoji
+Alt & n::SEND ñ ; enye (n with tilde from spanish) (lower case, you can shift-insert to uppercase remember?)
+Alt & p::SEND 🙏 ; prayer emoji (technically, Unicode Character 'PERSON WITH FOLDED HANDS' (U+1F64F), but I don't see any person there...)
+Alt & s::SEND 😄 ; smile emoji (grinning face with smiling eyes)
 Alt & t::SEND 🤔 ; thinking emoji
 Alt & w::SEND 😩 ; weary emoji
 Alt & -::SEND 👎 ; thumbs down emoji
 Alt & =::SEND 👍 ; thumbs up emoji ; this should be + but whatever, + & = share a key.
 Alt & 1::SEND 💯 ; 100 emoji
 Alt & Space::SEND % respace(Clipboard)
+Alt & SC028::SEND % "{ASC 34}" . respace(Clipboard) . "{ASC 34}"
 Insert::SENDINPUT % ToFilename(Clipboard)
+Alt & Insert::SENDINPUT % ToLower(Clipboard)
 Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% ; current date/time ; Mon, 2020-01-13 08:21:01
 
 ; these are the ones that require you to hold shift
@@ -63,10 +72,13 @@ Shift & C::SEND ⊂ ; subset
 Shift & E::SEND ∃ ; exists
 Shift & F::SEND ſ ; why is the long s bound to f? because s was already taken, and it looks like an f
 Shift & L::SEND Ł ; slashed L
+Shift & N::SEND ∩ ; intersection
 Shift & O::SEND ∘ ; ring
 Shift & S::SEND § ; on my comptuer this jams if you use left shift, so use right shift
 Shift & T::SEND ‡ ; double dagger
+Shift & U::SEND ∪ ; union
 Shift & Y::SEND Þ ; why is the thorn bound to y? historical folly
+Shift & Z::SEND ẞ ; Eszett from german (uppercase) bound to z because my s key was taken
 Shift & =::SEND ≡ ; triple bar (sometimes "logically identical to")
 Shift & -::SEND ¯ ; overline
 Shift & <::SEND ← ; left arrow
@@ -78,6 +90,7 @@ Shift & SC035::SENDINPUT ¿ ; inverted question mark ; sc035 in place of a liter
 Shift & Space::SEND _ ; underline for typing variable names faster
 Shift & ^::SEND ∧ ; logical and
 Shift & *::SEND ⋅ ; dot (multiply)
+Shift & |:: SEND ⊢ ; turnstile (useful in logic)
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 
 
@@ -96,6 +109,7 @@ tmp := StrReplace(tmp, ".", " ")
 tmp := StrReplace(tmp, "ü", "ue") ; these are for german umlauts, but might collide with diaereses
 tmp := StrReplace(tmp, "ö", "oe")
 tmp := StrReplace(tmp, "ä", "ae")
+tmp := StrReplace(tmp, "ñ", "ny") ; spanish
 tmp := RegExReplace(tmp, "\$(\d*)\.(\d*)", Replacement := " $1 dollars $2 cents ")
 tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
 tmp := RegExReplace(tmp, "\s+", Replacement := " ")
@@ -108,6 +122,11 @@ ToUpper(s){
 StringUpper, tmp, s
 return tmp
 } ; need this function that returns something so we can pass the result to SEND inline.
+
+ToLower(s){
+StringLower, tmp, s
+return tmp
+} ; need this function that returns something so we can pass the result to SEND inline
 
 respace(s){
 s := RegExReplace(s, "\s+", Replacement := " ")
