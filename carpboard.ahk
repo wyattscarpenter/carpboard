@@ -32,31 +32,18 @@ z::SEND ß ; Eszett from german (lowercase) bound to z because my s key was take
 SC035::SENDINPUT ¯\_(ツ)_/¯ ; shruggie ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
 \::SENDINPUT ¯\\\_(ツ)\_/¯ ; reddit-escaped shruggie
 `::SEND “ ; fancy left double quote
-f::SEND ( ; left paren for programming in lisp faster
-j::SEND ) ; right paren for programming in lisp faster
+f::SEND 「 ; left quotation mark japanese
+j::SEND 」 ; right quotation mark japanese
 Space::SEND - ; hyphen for programming in lisp faster
 .::SEND ∴ ; therefore
 ,::SEND ∵ ; because
 -::SEND ± ; plus or minus
 *::SEND ⁂ ; asterism
 Alt & a::SEND ã ; a with tilde from portuguese (lower case, you can shift-insert to uppercase remember?)
-Alt & b::SEND 🅱️ ; B emoji
-Alt & e::SEND 👀 ; eyes emoji
-Alt & f::SEND 🔥 ; fire emoji
-Alt & g::SEND 😬 ; grimmace emoji
-Alt & j::SEND 😂 ; joy emoji
-Alt & l::SEND 🕴️ ; levitating businessman emoji
-Alt & m::SEND 😏 ; smirk emoji
+Alt & f::SEND ❧ ; fleuron (U+2767 ❧ ROTATED FLORAL HEART BULLET (HTML &#10087;) (Dingbats))
 Alt & n::SEND ñ ; enye (n with tilde from spanish) (lower case, you can shift-insert to uppercase remember?)
-Alt & p::SEND 🙏 ; prayer emoji (technically, Unicode Character 'PERSON WITH FOLDED HANDS' (U+1F64F), but I don't see any person there...)
-Alt & s::SEND 😄 ; smile emoji (grinning face with smiling eyes)
-Alt & t::SEND 🤔 ; thinking emoji
-Alt & w::SEND 😩 ; weary emoji
-Alt & -::SEND 👎 ; thumbs down emoji
-Alt & =::SEND 👍 ; thumbs up emoji ; this should be + but whatever, + & = share a key.
-Alt & 1::SEND 💯 ; 100 emoji
-Alt & Space::SEND % respace(Clipboard)
-Alt & SC028::SEND % "{ASC 34}" . respace(Clipboard) . "{ASC 34}"
+Alt & Space::SEND % respace(Clipboard) ; respace text with random spaces in, like in a pdf or fixed-width ascii document
+Alt & SC028::SEND % "{ASC 34}" . respace(Clipboard) . "{ASC 34}" ; respace and quote text (34 is ascii code for double quote)
 Insert::SENDINPUT % ToFilename(Clipboard)
 Alt & Insert::SENDINPUT % ToLower(Clipboard)
 Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% ; current date/time ; Mon, 2020-01-13 08:21:01
