@@ -78,6 +78,7 @@ Shift & Space::SEND _ ; underline for typing variable names faster
 Shift & ^::SEND ∧ ; logical and
 Shift & *::SEND ⋅ ; dot (multiply)
 Shift & |:: SEND ⊢ ; turnstile (useful in logic)
+Shift & $:: SEND £ ; pound sterling
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 
 
