@@ -16,31 +16,40 @@ b::SEND ♪ ; eighth note (to demonstrate music)
 c::SEND ¢ ; cents
 d::SEND ∂ ; partial derivative
 e::SEND ∈ ; element of
+h::SEND ʰ ; aspiration mark
+g::SEND ŋ ; ng letter (voiced velar nasal) "eng"
 l::SEND ł ; slashed l
 m::SEND — ; em dash
 n::SEND – ; en dash
 o::SEND ° ; degree
 p::SEND ¶ ; this is a pilcrow. for some reason notepad displays it as ❡
+r::SEND я ; Cyrillic letter ya (lowercase)
 s::SEND ∫ ; integral
 t::SEND † ; dagger
+u::SEND ə ; schwa (u is for uh)
 v::SEND ∨ ; logical or
+w::SEND ƿ ; wynn
 x::SEND × ; cross (multiply)
 y::SEND þ ; why is the thorn bound to y? historical folly
 z::SEND ß ; Eszett from german (lowercase) bound to z because my s key was taken
 =::SEND ≈ ; approximately equal
 0::SEND ∞ ; infinity
+;TODO: subscript numbers?
 SC035::SENDINPUT ¯\_(ツ)_/¯ ; shruggie ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
 \::SENDINPUT ¯\\\_(ツ)\_/¯ ; reddit-escaped shruggie
 `::SEND “ ; fancy left double quote
 f::SEND 「 ; left quotation mark japanese
 j::SEND 」 ; right quotation mark japanese
-Space::SEND - ; hyphen for programming in lisp faster
+;Space::SEND - ; hyphen for programming in lisp faster ; I never used this
+Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank me at some point. I may replace it with █ or replace nbsp with █ and replace this with nbsp.
 .::SEND ∴ ; therefore
 ,::SEND ∵ ; because
 -::SEND ± ; plus or minus
 *::SEND ⁂ ; asterism
+
+
 Alt & a::SEND ã ; a with tilde from portuguese (lower case, you can shift-insert to uppercase remember?)
-Alt & f::SEND ❧ ; fleuron (U+2767 ❧ ROTATED FLORAL HEART BULLET (HTML &#10087;) (Dingbats))
+Alt & s::SEND ſ ; long s
 Alt & n::SEND ñ ; enye (n with tilde from spanish) (lower case, you can shift-insert to uppercase remember?)
 Alt & Space::SEND % respace(Clipboard) ; respace text with random spaces in, like in a pdf or fixed-width ascii document
 Alt & SC028::SEND % "{ASC 34}" . respace(Clipboard) . "{ASC 34}" ; respace and quote text (34 is ascii code for double quote)
@@ -57,24 +66,29 @@ Shift & A::SEND ∀ ; all
 Shift & B::SEND ♫ ; beamed eighth notes (to demonstrate music)
 Shift & C::SEND ⊂ ; subset
 Shift & E::SEND ∃ ; exists
-Shift & F::SEND ſ ; why is the long s bound to f? because s was already taken, and it looks like an f
+Shift & F::SEND ❧ ; fleuron (U+2767 ❧ ROTATED FLORAL HEART BULLET (HTML &#10087;) (Dingbats))
+Shift & G::SEND Ŋ ; capital ng letter (voiced velar nasal) "eng"
 Shift & L::SEND Ł ; slashed L
 Shift & N::SEND ∩ ; intersection
 Shift & O::SEND ∘ ; ring
-Shift & S::SEND § ; on my comptuer this jams if you use left shift, so use right shift
+Shift & R::SEND Я ; Capital Cyrillic letter ya
+Shift & S::SEND § ; on my computer this jams if you use left shift, so use right shift
 Shift & T::SEND ‡ ; double dagger
 Shift & U::SEND ∪ ; union
-Shift & Y::SEND Þ ; why is the thorn bound to y? historical folly
+Shift & W::SEND Ƿ ; capital wynn
+Shift & Y::SEND Þ ; why is the capital thorn bound to capital y? historical folly
 Shift & Z::SEND ẞ ; Eszett from german (uppercase) bound to z because my s key was taken
+;TODO: superscript numbers?
 Shift & =::SEND ≡ ; triple bar (sometimes "logically identical to")
 Shift & -::SEND ¯ ; overline
 Shift & <::SEND ← ; left arrow
-Shift & >::SEND → ; right arroe
+Shift & >::SEND → ; right arrow
 Shift & SC028::SEND ” ; fancy right double quote ; sc028 in place of a literal " or '
 Shift & {::SEND ‘ ; fancy left single quote
 Shift & }::SEND ’ ; fancy right single quote
 Shift & SC035::SENDINPUT ¿ ; inverted question mark ; sc035 in place of a literal ? or /
-Shift & Space::SEND _ ; underline for typing variable names faster
+;Shift & Space::SEND _ ; underline for typing variable names faster ; I never used this
+Shift & Space::SEND {U+00A0} ; non-breaking space
 Shift & ^::SEND ∧ ; logical and
 Shift & *::SEND ⋅ ; dot (multiply)
 Shift & |:: SEND ⊢ ; turnstile (useful in logic)
