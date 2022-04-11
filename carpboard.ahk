@@ -48,7 +48,11 @@ Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank m
 *::SEND ⁂ ; asterism
 
 
-Alt & a::SEND ã ; a with tilde from portuguese (lower case, you can shift-insert to uppercase remember?)
+Alt & `::SEND ã ; a with tilde from portuguese (` is the same key as ~ and writing ~ here doesn't work)
+Alt & a::SEND ä ; a umlaut (lower case, you can shift-insert to uppercase remember?)
+Alt & o::SEND ö ; o umlaut
+Alt & u::SEND ü ; u umlaut
+Alt & /::SEND ø ; slashed o
 Alt & s::SEND ſ ; long s
 Alt & n::SEND ñ ; enye (n with tilde from spanish) (lower case, you can shift-insert to uppercase remember?)
 Alt & Space::SEND % respace(Clipboard) ; respace text with random spaces in, like in a pdf or fixed-width ascii document
@@ -95,6 +99,7 @@ Shift & |:: SEND ⊢ ; turnstile (useful in logic)
 Shift & $:: SEND £ ; pound sterling
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 
+; note: alt+shift will change the keyboard language on windows, like Windows + Spacebar. So... try not to hit that. 
 
 ToFilename(s){
 StringLower, tmp, s
