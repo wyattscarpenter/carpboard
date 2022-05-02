@@ -55,11 +55,16 @@ Alt & u::SEND ü ; u umlaut
 Alt & /::SEND ø ; slashed o
 Alt & s::SEND ſ ; long s
 Alt & n::SEND ñ ; enye (n with tilde from spanish) (lower case, you can shift-insert to uppercase remember?)
+Alt & -::SEND ⹀ ; double hyphen
+
 Alt & Space::SEND % respace(Clipboard) ; respace text with random spaces in, like in a pdf or fixed-width ascii document
 Alt & SC028::SEND % "{ASC 34}" . respace(Clipboard) . "{ASC 34}" ; respace and quote text (34 is ascii code for double quote)
+Alt & y::SEND % "{ASC 34}" . respace(stripTimestamps(Clipboard)) . "{ASC 34}" ; strip youtube timestamps, respace, and quote text
 Insert::SENDINPUT % ToFilename(Clipboard)
 Alt & Insert::SENDINPUT % ToLower(Clipboard)
 Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% ; current date/time ; Mon, 2020-01-13 08:21:01
+Ctrl & D::SENDINPUT %A_YYYY%-%A_MM%-%A_DD% ; current date ; 2020-01-13
+
 
 ; these are the ones that require you to hold shift
 ; #If Getkeystate("Capslock","p") and Getkeystate("Shift","p") failed mysteriously,
@@ -138,6 +143,11 @@ return tmp
 respace(s){
 s := RegExReplace(s, "\s+", Replacement := " ")
 s := trim(s)
+return s
+}
+
+stripTimestamps(s){
+s := RegExReplace(s, "\d?\d?:?\d?\d:\d\d", Replacement := " ")
 return s
 }
 
