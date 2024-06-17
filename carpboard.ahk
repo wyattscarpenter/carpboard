@@ -5,7 +5,12 @@
 
 ; KeyHistory ; uncomment this line if some hotkey is giving you trouble and you need to review scancodes
 
+SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of the script.
+; For this script, I bound everything to Capslock because my first choice for a dead/hotkey, the fn key, isn't a real key that sends keystrokes :/
+; and i am a very quiet man anyway
+
 ; I've decided to add some bbcode-style hotstrings, for greater extension and mnemonicity. Not yet comprehensive. Some are just experiments See https://www.autohotkey.com/docs/v1/Hotstrings.htm for info about the wacky options I used here.
+; I'm considering using ;;foo;; as the syntax here, since unlike :foo: I can't think of anything else that uses it. Or perhaps foo;;foo2
 ; Note that almost no text editors compose all of these right, but they should eventually display right in sophisticated text-viewers like the browser.
 #Hotstring EndChars :
 #Hotstring O ? Z
@@ -36,9 +41,67 @@
 :::tie::͡
 :::undertie::͜
 :::s::̶
+:::h::ʰ
+:::overline::̅
+:::infinity::∞
+:::therefore::∴
+:::because::∵
+
+:::overring::̊
+:::underring::̥
+;I'd like to have :::ring:: default to overring, but that is also an emoji bbcode, so we can't use it as long as we're using the same escape pattern...
 
 ;Could also do stuff like...
 :::a'::á ;by the way, this does work for both cases, a' → á and A' → Á by default
+:::a~::ã
+:::n~::ñ
+:::~a::ã
+:::~n::ñ
+:::a°::å ;unfortunately this does nothing, perhaps because when the script prints, it never sends a ° keystroke, or something. So as of now this just triggers 🅰 emoji ; note that we can't use ao because I've discovered the ao ligature, below.
+:::a ring::å
+:::slashed o::ø
+:::o slash::ø
+:::o/::ø
+:::/o::ø
+:::ae::æ
+:::oe::œ
+:::ao::ꜵ
+:::e::ə ;I've put this here as well to generate the capital schwa, Ə, on occasion.
+:::əo::ᴔ ; should be əo, but I can't type ə, and so far I haven't figured out how to make these hotkeys work recursively, so...
+:::long s::ſ
+:::ellipsis::…
+:::...::…
+:::midline ellipsis::⋯
+:::midlipsis::⋯
+:::vertical ellipsis::⋮
+:::interrobang::‽
+:::?!::‽
+:::!?::‽
+:::inverted interrobang::⸘
+:::¿¡::⸘
+:::¡¿::⸘
+:::?::� ;should I have saved this for ❓, the emoji that the emoji script reaches by :question:? Hmm...
+:::<?>::�
+;Alphabetic Presentation Forms (only the f ones)
+:::ff::ﬀ
+:::fi::ﬁ
+:::fl::ﬂ
+:::ffi::ﬃ
+:::ffl::ﬄ
+:::ft::ﬅ
+:::pbuh::ﷺ
+:::schwa::ə
+
+; I don't think any of these work, and they should not be checked in, but I don't know why they don't work.
+:::ack::{ASC 6}
+:::bel::{ASC 7}
+:::tab::{ASC 9}
+:::lf::{ASC 10}
+:::formfeed::{ASC 12}
+:::cr::{ASC 13}
+:::syn::{ASC 22}
+:::nak::{ASC 21}
+
 
 ;There could also be a multi-step compose, where a!b → c, c!d → e, etc. Eg ::a!b::c ::c!d::e. Changing back to the hotstring Z0 here could help. Or something.
 
@@ -58,10 +121,16 @@
 :::dagger::†
 :::double dagger::‡
 :::triple dagger::⹋
-
-SetCapslockState AlwaysOff
-; I bound everything to Capslock because my first choice for a dead/hotkey, the fn key, isn't a real key that sends keystrokes :/
-; and i am a very quiet man anyway
+:::multiocular o::ꙮ
+:::nbsp::{U+00A0}
+:::thinspace:: 
+:::thin space:: 
+:::thinsp:: 
+:::thsp:: 
+:::hairspace::{U+200A}
+:::hair space::{U+200A}
+:::hairsp::{U+200A}
+:::hrsp::{U+200A}
 
 #If Getkeystate("Capslock","p")
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
@@ -123,8 +192,7 @@ Alt & s::SEND ſ ; long s
 Alt & n::SEND ñ ; enye (n with tilde from spanish) (lower case, you can shift-insert to uppercase remember?)
 Alt & -::SEND ⹀ ; double hyphen
 Alt & 0::SEND ∞ ; infinity
-Alt & !::SEND ‽ ; interrobang ; This is probably a bad binding because you actually have to hit 1 with the shift off... but plain caps and caps+shift were taken with good reason, and afaict I can't caps+alt+shift 
-
+Alt & !::SEND ‽ ; interrobang ; This is probably a bad binding because you actually have to hit 1 with the shift off... but plain caps and caps+shift were taken with good reason, and afaict I can't caps+alt+shift
 
 Alt & Space::SEND % respace(Clipboard) ; respace text with random spaces in, like in a pdf or fixed-width ascii document
 Alt & SC028::SEND % "{ASC 34}" . respace(Clipboard) . "{ASC 34}" ; respace and quote text (34 is ascii code for double quote)
@@ -133,9 +201,9 @@ Insert::SENDINPUT % ToFilename(Clipboard)
 Alt & Insert::SENDINPUT % ToLower(Clipboard)
 Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% ; current date/time ; Mon, 2020-01-13 08:21:01
 Ctrl & D::SENDINPUT %A_YYYY%-%A_MM%-%A_DD% ; current date ; 2020-01-13
+Alt & V::msgbox You are using Carpboard under AutoHotKey version %A_AhkVersion%
 
-
-; these are the ones that require you to hold shift
+; These are the ones that require you to hold shift
 ; #If Getkeystate("Capslock","p") and Getkeystate("Shift","p") failed mysteriously,
 ; so we're just going to use the 2-key hotkey feature
 Shift & `::SEND ¬ ; logical not
@@ -150,7 +218,7 @@ Shift & L::SEND Ł ; slashed L
 Shift & N::SEND ∩ ; intersection
 Shift & O::SEND ∘ ; ring
 Shift & R::SEND Я ; Capital Cyrillic letter ya
-Shift & S::SEND § ; on my computer this jams if you use left shift, so use right shift
+Shift & S::SEND § ; section ; on my computer this jams if you use left shift, so use right shift
 Shift & T::SEND ‡ ; double dagger
 Shift & U::SEND ∪ ; union
 Shift & W::SEND Ƿ ; capital wynn
@@ -176,7 +244,7 @@ Shift & $::SEND £ ; pound sterling
 
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 
-; note: alt+shift will change the keyboard language on windows, like Windows + Spacebar. So... try not to hit that. 
+; note: alt+shift will change the keyboard language on windows, like Windows + Spacebar. So... try not to hit that.
 
 ToFilename(s){
 StringLower, tmp, s
