@@ -82,6 +82,7 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::¡¿::⸘
 :::?::� ;should I have saved this for ❓, the emoji that the emoji script reaches by :question:? Hmm...
 :::<?>::�
+:::??::⸮
 ;Alphabetic Presentation Forms (only the f ones)
 :::ff::ﬀ
 :::fi::ﬁ
@@ -92,15 +93,29 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::pbuh::ﷺ
 :::schwa::ə
 
-; I don't think any of these work, and they should not be checked in, but I don't know why they don't work.
-:::ack::{ASC 6}
-:::bel::{ASC 7}
-:::tab::{ASC 9}
-:::lf::{ASC 10}
-:::formfeed::{ASC 12}
-:::cr::{ASC 13}
-:::syn::{ASC 22}
-:::nak::{ASC 21}
+:::alpha::α
+:::Alpha::Α
+:::ALPHA::Α
+:::beta::β
+:::Beta::Β
+; todo: rest of greek alphabet.
+:::theta::θ
+:::Theta::Θ
+
+
+; ASCII "C0" control characters. See https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C0_controls.
+; For these, you must use unicode-style {U+hex} directives in AHK; you cannot use eg {ASC 7} or you will get the • bullet point character of Code page 437 instead of the ASCII bel character. Also note that many systems will not take this input correctly. My text editor, notepad++, seems to take them right, however.
+:::nul::{U+0} ; (my text editor can handle this easily but it makes git treat this file like binary ha ha)
+:::ack::{U+6} ; 
+:::bel::{U+7} ; 
+:::tab::{U+9} ; 	 a true tab character (not an indent made of spaces)
+:::lf::{U+A} ; a true, modern newline
+:::formfeed::{U+C} ;  (I would like to make this :ff:, but that's already ﬀ, alas.)
+:::cr::{U+D} ; an impostor, old newline component
+:::syn::{U+16} ; 
+:::nak::{U+15} ; 
+:::esc::{U+1B} ;  can be useful
+; todo, perhaps: rest of C0
 
 
 ;There could also be a multi-step compose, where a!b → c, c!d → e, etc. Eg ::a!b::c ::c!d::e. Changing back to the hotstring Z0 here could help. Or something.
