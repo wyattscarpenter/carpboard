@@ -114,7 +114,7 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::cr::{U+D} ; an impostor, old newline component
 :::syn::{U+16} ; 
 :::nak::{U+15} ; 
-:::esc::{U+1B} ;  can be useful
+:::esc::{U+1B} ;  can be useful for terminal coloring I guess.
 ; todo, perhaps: rest of C0
 
 
