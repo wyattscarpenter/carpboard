@@ -105,7 +105,7 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 
 ; ASCII "C0" control characters. See https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C0_controls.
 ; For these, you must use unicode-style {U+hex} directives in AHK; you cannot use eg {ASC 7} or you will get the • bullet point character of Code page 437 instead of the ASCII bel character. Also note that many systems will not take this input correctly. My text editor, notepad++, seems to take them right, however.
-:::nul::{U+0} ; (my text editor can handle this easily but it makes git treat this file like binary ha ha)
+:::nul::{U+0} ; (My text editor could handle me including a literal example of this character easily... but it makes git treat this file like binary ha ha! So, no example here.)
 :::ack::{U+6} ; 
 :::bel::{U+7} ; 
 :::tab::{U+9} ; 	 a true tab character (not an indent made of spaces)
