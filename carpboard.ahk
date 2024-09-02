@@ -46,6 +46,7 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::infinity::∞
 :::therefore::∴
 :::because::∵
+:::prime::′
 
 :::overring::̊
 :::underring::̥
@@ -141,11 +142,13 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::thinspace:: 
 :::thin space:: 
 :::thinsp:: 
-:::thsp:: 
+:::thsp:: :
+:::tsp:: :
 :::hairspace::{U+200A}
 :::hair space::{U+200A}
 :::hairsp::{U+200A}
 :::hrsp::{U+200A}
+:::hsp::{U+200A}
 
 #If Getkeystate("Capslock","p")
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
