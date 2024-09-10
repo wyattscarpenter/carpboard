@@ -150,6 +150,15 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::hrsp::{U+200A}
 :::hsp::{U+200A}
 
+:::dotless i::ı
+:::dotless I::I
+:::dotted i::i
+:::dotted I::İ
+:::dotless j::ȷ
+:::dotless J::J
+:::dotted j::j
+:::dotted J::J̇
+
 #If Getkeystate("Capslock","p")
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
 a::SEND ∝ ; proportionality
@@ -158,6 +167,7 @@ c::SEND ¢ ; cents
 d::SEND ∂ ; partial derivative
 e::SEND ∈ ; element of
 h::SEND ʰ ; aspiration mark
+i::SEND ı ; the dotless i, the abomination
 g::SEND ŋ ; ng letter (voiced velar nasal) "eng"
 l::SEND ł ; slashed l
 m::SEND — ; em dash
@@ -232,6 +242,7 @@ Shift & C::SEND ⊂ ; subset
 Shift & E::SEND ∃ ; exists
 Shift & F::SEND ❧ ; fleuron (U+2767 ❧ ROTATED FLORAL HEART BULLET (HTML &#10087;) (Dingbats))
 Shift & G::SEND Ŋ ; capital ng letter (voiced velar nasal) "eng"
+Shift & I::SEND ɪ ; small capital I, useful as the https://en.wikipedia.org/wiki/Near-close_near-front_unrounded_vowel of IPA
 Shift & L::SEND Ł ; slashed L
 Shift & N::SEND ∩ ; intersection
 Shift & O::SEND ∘ ; ring
