@@ -36,6 +36,7 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::dot::̇
 :::dot below::̣
 :::two dots::̈
+:::twodots::̈
 :::two dots below::̤
 :::..::̈
 :::tie::͡
@@ -47,7 +48,9 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::therefore::∴
 :::because::∵
 :::prime::′
-
+:::double prime::″
+:::triple prime::‴
+:::quadruple prime::⁗
 :::overring::̊
 :::underring::̥
 ;I'd like to have :::ring:: default to overring, but that is also an emoji bbcode, so we can't use it as long as we're using the same escape pattern...
@@ -59,6 +62,16 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::~a::ã
 :::~n::ñ
 :::a°::å ;unfortunately this does nothing, perhaps because when the script prints, it never sends a ° keystroke, or something. So as of now this just triggers 🅰 emoji ; note that we can't use ao because I've discovered the ao ligature, below.
+:::a"::ä
+:::e"::ë
+:::h"::ḧ
+:::i"::ï
+:::o"::ö
+:::t"::ẗ
+:::u"::ü
+:::w"::ẅ
+:::x"::ẍ
+:::y"::ÿ
 :::a ring::å
 :::slashed o::ø
 :::o slash::ø
@@ -158,6 +171,19 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::dotless J::J
 :::dotted j::j
 :::dotted J::J̇
+
+:::ditto::〃
+:::ditto mark::〃
+:::ditto symbol::〃
+:::bullet::•
+:::bullet point::•
+:::swung dash::⁓
+:::wave dash::〜
+:::part alternation mark::〽
+:::double hyphen::⹀
+:::double oblique hyphen::⸗
+:::oblique double hyphen::⸗
+:::choonpu::ー
 
 #If Getkeystate("Capslock","p")
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
