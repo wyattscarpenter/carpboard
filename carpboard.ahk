@@ -184,6 +184,12 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::double oblique hyphen::⸗
 :::oblique double hyphen::⸗
 :::choonpu::ー
+:::block::█
+:::full block::█
+
+:::IAA::{U+FFF9} ; ￹, Interlinear annotation anchor — marks start of annotated text https://en.wikipedia.org/wiki/Ruby_character https://www.unicode.org/versions/Unicode15.0.0/ch23.pdf#G15944 Example: ￹Hello￺/hε.lo/￻
+:::IAS::{U+FFFA} ; ￺, Interlinear annotation separator — marks start of annotating character(s) (probably it's picked so the A reminds you of annotations?
+:::IAT::{U+FFFB} ; ￻ Interlinear annotation terminator — marks end of annotated text
 
 #If Getkeystate("Capslock","p")
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
