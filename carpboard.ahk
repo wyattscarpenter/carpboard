@@ -162,6 +162,7 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::hairsp::{U+200A}
 :::hrsp::{U+200A}
 :::hsp::{U+200A}
+:::nnbsp:: 
 
 :::dotless i::ı
 :::dotless I::I
