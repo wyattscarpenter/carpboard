@@ -25,6 +25,8 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::double acute::̋
 :::acute below::̗
 :::grave::̀
+# the ` is a special character in ahk (among many, many special characters...), so you have to have two here to represent just one. The code is :`:, for a ̀
+:::``::̀
 :::grave tone::̀
 :::double grave::̏
 :::grave below::̖
