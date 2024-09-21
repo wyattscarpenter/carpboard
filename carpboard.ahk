@@ -1,5 +1,4 @@
-﻿; please remember that this file must be saved with a little-endian byteorder mark, whether it's utf8 or utf16
-; that's just one of ahk's wacky rules.
+﻿; Please remember that this file must be saved with a little-endian byteorder mark, whether it's utf8 or utf16; that's just one of ahk (v1)'s wacky rules.
 #SingleInstance FORCE
 #InstallKeybdHook
 
@@ -320,52 +319,52 @@ Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 ; note: alt+shift will change the keyboard language on windows, like Windows + Spacebar. So... try not to hit that.
 
 ToFilename(s){
-StringLower, tmp, s
-;the following heuristics have served me well
-tmp := StrReplace(tmp, "+", " plus ")
-tmp := StrReplace(tmp, "=", " equals ")
-tmp := StrReplace(tmp, "/", " slash ")
-tmp := StrReplace(tmp, "%", " percent ")
-tmp := StrReplace(tmp, "&", " and ")
-;tmp := StrReplace(tmp, "@", " at ") ; since most @s are usernames nowadays this turns out to be a bad substitution, better to just remove them.
-tmp := StrReplace(tmp, "_", " ")
-tmp := StrReplace(tmp, "-", " ") ; it's legitimate to have semantic hyphens in a file name, but I often like to copy file names that use them just as spaces.
-tmp := StrReplace(tmp, ".", " ")
-tmp := StrReplace(tmp, "ü", "ue") ; these are for german umlauts, but might collide with diaereses
-tmp := StrReplace(tmp, "ö", "oe")
-tmp := StrReplace(tmp, "ä", "ae")
-tmp := StrReplace(tmp, "ñ", "ny") ; spanish
-tmp := RegExReplace(tmp, "\$(\d*)\.(\d*)", Replacement := " $1 dollars $2 cents ")
-tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
-tmp := RegExReplace(tmp, "\s+", Replacement := " ")
-tmp := RegExReplace(tmp, "[^\w\ \-]", "")
-tmp := respace(tmp)
-return tmp
+  StringLower, tmp, s
+  ;the following heuristics have served me well
+  tmp := StrReplace(tmp, "+", " plus ")
+  tmp := StrReplace(tmp, "=", " equals ")
+  tmp := StrReplace(tmp, "/", " slash ")
+  tmp := StrReplace(tmp, "%", " percent ")
+  tmp := StrReplace(tmp, "&", " and ")
+  ;tmp := StrReplace(tmp, "@", " at ") ; since most @s are usernames nowadays this turns out to be a bad substitution, better to just remove them.
+  tmp := StrReplace(tmp, "_", " ")
+  tmp := StrReplace(tmp, "-", " ") ; it's legitimate to have semantic hyphens in a file name, but I often like to copy file names that use them just as spaces.
+  tmp := StrReplace(tmp, ".", " ")
+  tmp := StrReplace(tmp, "ü", "ue") ; these are for german umlauts, but might collide with diaereses
+  tmp := StrReplace(tmp, "ö", "oe")
+  tmp := StrReplace(tmp, "ä", "ae")
+  tmp := StrReplace(tmp, "ñ", "ny") ; spanish
+  tmp := RegExReplace(tmp, "\$(\d*)\.(\d*)", Replacement := " $1 dollars $2 cents ")
+  tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
+  tmp := RegExReplace(tmp, "\s+", Replacement := " ")
+  tmp := RegExReplace(tmp, "[^\w\ \-]", "")
+  tmp := respace(tmp)
+  return tmp
 }
 
 ToUpper(s){
-StringUpper, tmp, s
-return tmp
+  StringUpper, tmp, s
+  return tmp
 } ; need this function that returns something so we can pass the result to SEND inline.
 
 ToLower(s){
-StringLower, tmp, s
-return tmp
+  StringLower, tmp, s
+  return tmp
 } ; need this function that returns something so we can pass the result to SEND inline
 
 respace(s){
-s := RegExReplace(s, "\s+", Replacement := " ")
-s := trim(s)
-return s
+  s := RegExReplace(s, "\s+", Replacement := " ")
+  s := trim(s)
+  return s
 }
 
 stripTimestamps(s){
-s := RegExReplace(s, "\d?\d?:?\d?\d:\d\d", Replacement := " ")
-return s
+  s := RegExReplace(s, "\d?\d?:?\d?\d:\d\d", Replacement := " ")
+  return s
 }
 
 trim(s){
-s := RegExReplace(s, "^\s*")
-s := RegExReplace(s, "\s*$")
-return s
+  s := RegExReplace(s, "^\s*")
+  s := RegExReplace(s, "\s*$")
+  return s
 }
