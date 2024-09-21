@@ -5,9 +5,12 @@
 
 ; KeyHistory ; uncomment this line if some hotkey is giving you trouble and you need to review scancodes
 
-SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of the script.
-; For this script, I bound everything to Capslock because my first choice for a dead/hotkey, the fn key, isn't a real key that sends keystrokes :/
-; and i am a very quiet man anyway
+; "As for the CapsLock modifier, this script is able to recognize if you are using it as a modifier or are just toggling it."
+; "Add 3 more layers to your keyboard Using these 3 Modifiers - Easy to Program Too!" https://www.autohotkey.com/boards/viewtopic.php?f=7&t=20661
+CapsLock::
+  KeyWait, CapsLock
+  If (A_PriorKey="CapsLock")
+    SetCapsLockState, % GetKeyState("CapsLock","T") ? "Off" : "On"
 
 ; I've decided to add some bbcode-style hotstrings, for greater extension and mnemonicity. Not yet comprehensive. Some are just experiments See https://www.autohotkey.com/docs/v1/Hotstrings.htm for info about the wacky options I used here.
 ; I'm considering using ;;foo;; as the syntax here, since unlike :foo: I can't think of anything else that uses it. Or perhaps foo;;foo2
@@ -35,6 +38,8 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::hook below left::̡
 :::hook below right::̢
 :::cedilla::̧
+:::,::̧
+:::c,::ç
 :::dot::̇
 :::dot below::̣
 :::two dots::̈
@@ -194,7 +199,13 @@ SetCapslockState AlwaysOff ; I'm pretty sure this only works if near the top of 
 :::IAS::{U+FFFA} ; ￺, Interlinear annotation separator — marks start of annotating character(s) (probably it's picked so the A reminds you of annotations?
 :::IAT::{U+FFFB} ; ￻ Interlinear annotation terminator — marks end of annotated text
 
+; These let you reload the script with ctrl-caps, and the tilde prevents it from flipping capslock on. I don't know why just putting it below didn't work. I'm tired.
+~Capslock & Ctrl::Reload
+~Ctrl & Capslock::Reload
+
 #If Getkeystate("Capslock","p")
+Backspace::Edit
+Enter::Run, cmd ; this opens cmd to the carpboard folder, which is nice for me to git commit edits to carpboard
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
 a::SEND ∝ ; proportionality
 b::SEND ♪ ; eighth note (to demonstrate music)
