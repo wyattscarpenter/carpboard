@@ -199,13 +199,11 @@ CapsLock::
 :::IAS::{U+FFFA} ; ￺, Interlinear annotation separator — marks start of annotating character(s) (probably it's picked so the A reminds you of annotations?
 :::IAT::{U+FFFB} ; ￻ Interlinear annotation terminator — marks end of annotated text
 
-; These let you reload the script with ctrl-caps, and the tilde prevents it from flipping capslock on. I don't know why just putting it below didn't work. I'm tired.
-~Capslock & Ctrl::Reload
-~Ctrl & Capslock::Reload
-
 #If Getkeystate("Capslock","p")
-Backspace::Edit
-Enter::Run, cmd ; this opens cmd to the carpboard folder, which is nice for me to git commit edits to carpboard
+; These next three are combiner keys, but remember: you have to press CapsLock first for chords in this program.
+Alt::Edit ; mnemonic: ALTer the program
+Ctrl::Run, cmd ; this opens cmd to the carpboard folder, which is nice for me to git commit edits to carpboard ; mnemonic: CONTROL the source code
+Shift::Reload ; mnemonic: SHIFT over to the newer version
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
 a::SEND ∝ ; proportionality
 b::SEND ♪ ; eighth note (to demonstrate music)
