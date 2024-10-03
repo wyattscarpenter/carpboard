@@ -12,10 +12,341 @@ CapsLock::
     SetCapsLockState, % GetKeyState("CapsLock","T") ? "Off" : "On"
 
 ; I've decided to add some bbcode-style hotstrings, for greater extension and mnemonicity. Not yet comprehensive. Some are just experiments See https://www.autohotkey.com/docs/v1/Hotstrings.htm for info about the wacky options I used here.
-; I'm considering using ;;foo;; as the syntax here, since unlike :foo: I can't think of anything else that uses it. Or perhaps foo;;foo2
+; I'm considering using changing to use ;;foo;; as the syntax here, since unlike :foo: I can't think of anything else that uses it. Or perhaps foo;;foo2
 ; Note that almost no text editors compose all of these right, but they should eventually display right in sophisticated text-viewers like the browser.
 #Hotstring EndChars :
 #Hotstring O ? Z
+
+; Typically I make misc additions here:
+
+:::salute::🫡
+:::shush::🤫
+:::!!::‼
+:::|-::⊢
+:::right tack::⊢
+:::tack::⊢
+:::proves::⊢
+:::tee::⊢
+:::|=::⊨
+:::double turnstile::⊨
+:::ttee::⊨
+:::grimace::😬
+:::grimmace::😬
+:::grimmacing::😬
+:::clenched teeth::😬
+:::--::⹀
+:::=::⹀
+; this fraction slash does the wacky thing where 1⁄2 displays like ½
+:::fraction::⁄
+:::fraction slash::⁄
+; note that this is different than the fraction slash
+:::division slash::∕
+:::a'::á ;by the way, this does work for both cases, a' → á and A' → Á by default
+:::æ'::ǽ
+:::ae'::ǽ
+:::c'::ć
+:::e'::é
+:::g'::ǵ
+:::i'::í
+:::k'::ḱ
+:::l'::ĺ
+:::m'::ḿ
+:::n'::ń
+:::o'::ó
+:::ø'::ǿ
+:::/o'::ǿ
+:::o/'::ǿ
+:::p'::ṕ
+:::r'::ŕ
+:::s'::ś
+:::u'::ú
+:::w'::ẃ
+:::y'::ý
+:::z'::ź
+
+:::zwj::‍
+:::F::🇫
+:::sus::ඞ
+:::amogus::ඞ
+:::amongus::ඞ
+:::among us::ඞ
+:::sus2::ඩ
+:::amogus2::ඩ
+:::amongus2::ඩ
+:::among us2::ඩ
+:::turned ampersand::⅋
+:::&&::⅋
+:::per::⅌
+:::per sign::⅌
+:::non-breaking space::{U+00A0}
+:::logical and::∧
+:::and::∧
+:::multiply::⋅
+:::dotproduct::⋅
+:::dot product::⋅
+:::times::×
+:::crossproduct::×
+:::cross product::×
+:::turnstile::⊢
+:::numero::№
+:::number::№
+:::no::№
+:::nr::№
+:::division sign::÷
+:::division::÷
+:::divide::÷
+:::pound sterling::£
+:::pound::£ ; due to a different script I have running, this always turns into 💷 instead for me. A literal picture of a pound note lol...
+
+; https://en.wikipedia.org/wiki/Regional_indicator_symbol
+:::regional indicator symbol letter a::🇦
+:::regional indicator symbol letter b::🇧
+:::regional indicator symbol letter c::🇨
+:::regional indicator symbol letter d::🇩
+:::regional indicator symbol letter e::🇪
+:::regional indicator symbol letter f::🇫
+:::regional indicator symbol letter g::🇬
+:::regional indicator symbol letter h::🇭
+:::regional indicator symbol letter i::🇮
+:::regional indicator symbol letter j::🇯
+:::regional indicator symbol letter k::🇰
+:::regional indicator symbol letter l::🇱
+:::regional indicator symbol letter m::🇲
+:::regional indicator symbol letter n::🇳
+:::regional indicator symbol letter o::🇴
+:::regional indicator symbol letter p::🇵
+:::regional indicator symbol letter q::🇶
+:::regional indicator symbol letter r::🇷
+:::regional indicator symbol letter s::🇸
+:::regional indicator symbol letter t::🇹
+:::regional indicator symbol letter u::🇺
+:::regional indicator symbol letter v::🇻
+:::regional indicator symbol letter w::🇼
+:::regional indicator symbol letter x::🇽
+:::regional indicator symbol letter y::🇾
+:::regional indicator symbol letter z::🇿
+:::regional indicator a::🇦
+:::regional indicator b::🇧
+:::regional indicator c::🇨
+:::regional indicator d::🇩
+:::regional indicator e::🇪
+:::regional indicator f::🇫
+:::regional indicator g::🇬
+:::regional indicator h::🇭
+:::regional indicator i::🇮
+:::regional indicator j::🇯
+:::regional indicator k::🇰
+:::regional indicator l::🇱
+:::regional indicator m::🇲
+:::regional indicator n::🇳
+:::regional indicator o::🇴
+:::regional indicator p::🇵
+:::regional indicator q::🇶
+:::regional indicator r::🇷
+:::regional indicator s::🇸
+:::regional indicator t::🇹
+:::regional indicator u::🇺
+:::regional indicator v::🇻
+:::regional indicator w::🇼
+:::regional indicator x::🇽
+:::regional indicator y::🇾
+:::regional indicator z::🇿
+:::ri a::🇦
+:::ri b::🇧
+:::ri c::🇨
+:::ri d::🇩
+:::ri e::🇪
+:::ri f::🇫
+:::ri g::🇬
+:::ri h::🇭
+:::ri i::🇮
+:::ri j::🇯
+:::ri k::🇰
+:::ri l::🇱
+:::ri m::🇲
+:::ri n::🇳
+:::ri o::🇴
+:::ri p::🇵
+:::ri q::🇶
+:::ri r::🇷
+:::ri s::🇸
+:::ri t::🇹
+:::ri u::🇺
+:::ri v::🇻
+:::ri w::🇼
+:::ri x::🇽
+:::ri y::🇾
+:::ri z::🇿
+:::ri_a::🇦
+:::ri_b::🇧
+:::ri_c::🇨
+:::ri_d::🇩
+:::ri_e::🇪
+:::ri_f::🇫
+:::ri_g::🇬
+:::ri_h::🇭
+:::ri_i::🇮
+:::ri_j::🇯
+:::ri_k::🇰
+:::ri_l::🇱
+:::ri_m::🇲
+:::ri_n::🇳
+:::ri_o::🇴
+:::ri_p::🇵
+:::ri_q::🇶
+:::ri_r::🇷
+:::ri_s::🇸
+:::ri_t::🇹
+:::ri_u::🇺
+:::ri_v::🇻
+:::ri_w::🇼
+:::ri_x::🇽
+:::ri_y::🇾
+:::ri_z::🇿
+:::[a]::🇦
+:::[b]::🇧
+:::[c]::🇨
+:::[d]::🇩
+:::[e]::🇪
+:::[f]::🇫
+:::[g]::🇬
+:::[h]::🇭
+:::[i]::🇮
+:::[j]::🇯
+:::[k]::🇰
+:::[l]::🇱
+:::[m]::🇲
+:::[n]::🇳
+:::[o]::🇴
+:::[p]::🇵
+:::[q]::🇶
+:::[r]::🇷
+:::[s]::🇸
+:::[t]::🇹
+:::[u]::🇺
+:::[v]::🇻
+:::[w]::🇼
+:::[x]::🇽
+:::[y]::🇾
+:::[z]::🇿
+
+; tag characters, see also https://www.unicode.org/charts/PDF/UE0000.pdf
+#Hotstring c
+:::tag begin::{U+E0001}
+:::begin tag::{U+E0001}
+:::tag language::{U+E0001}
+:::language tag::{U+E0001}
+:::tag  ::{U+E0020}
+:::tag sp::{U+E0020}
+:::tag !::{U+E0021}
+:::tag "::{U+E0022}
+:::tag #::{U+E0023}
+:::tag $::{U+E0024}
+:::tag %::{U+E0025}
+:::tag &::{U+E0026}
+:::tag '::{U+E0027}
+:::tag (::{U+E0028}
+:::tag )::{U+E0029}
+:::tag *::{U+E002A}
+:::tag +::{U+E002B}
+:::tag ,::{U+E002C}
+:::tag -::{U+E002D}
+:::tag .::{U+E002E}
+:::tag /::{U+E002F}
+:::tag 0::{U+E0030}
+:::tag 1::{U+E0031}
+:::tag 2::{U+E0032}
+:::tag 3::{U+E0033}
+:::tag 4::{U+E0034}
+:::tag 5::{U+E0035}
+:::tag 6::{U+E0036}
+:::tag 7::{U+E0037}
+:::tag 8::{U+E0038}
+:::tag 9::{U+E0039}
+:::tag :::{U+E003A}
+:::tag `;::{U+E003B}  ; semicolon, a special character in ahk, is escaped
+:::tag <::{U+E003C}
+:::tag =::{U+E003D}
+:::tag >::{U+E003E}
+:::tag ?::{U+E003F}
+:::tag @::{U+E0040}
+:::tag A::{U+E0041}
+:::tag B::{U+E0042}
+:::tag C::{U+E0043}
+:::tag D::{U+E0044}
+:::tag E::{U+E0045}
+:::tag F::{U+E0046}
+:::tag G::{U+E0047}
+:::tag H::{U+E0048}
+:::tag I::{U+E0049}
+:::tag J::{U+E004A}
+:::tag K::{U+E004B}
+:::tag L::{U+E004C}
+:::tag M::{U+E004D}
+:::tag N::{U+E004E}
+:::tag O::{U+E004F}
+:::tag P::{U+E0050}
+:::tag Q::{U+E0051}
+:::tag R::{U+E0052}
+:::tag S::{U+E0053}
+:::tag T::{U+E0054}
+:::tag U::{U+E0055}
+:::tag V::{U+E0056}
+:::tag W::{U+E0057}
+:::tag X::{U+E0058}
+:::tag Y::{U+E0059}
+:::tag Z::{U+E005A}
+:::tag [::{U+E005B}
+:::tag \::{U+E005C}
+:::tag ]::{U+E005D}
+:::tag ^::{U+E005E}
+:::tag _::{U+E005F}
+:::tag ``::{U+E0060} ; grave, a special character in ahk, is escaped
+:::tag a::{U+E0061}
+:::tag b::{U+E0062}
+:::tag c::{U+E0063}
+:::tag d::{U+E0064}
+:::tag e::{U+E0065}
+:::tag f::{U+E0066}
+:::tag g::{U+E0067}
+:::tag h::{U+E0068}
+:::tag i::{U+E0069}
+:::tag j::{U+E006A}
+:::tag k::{U+E006B}
+:::tag l::{U+E006C}
+:::tag m::{U+E006D}
+:::tag n::{U+E006E}
+:::tag o::{U+E006F}
+:::tag p::{U+E0070}
+:::tag q::{U+E0071}
+:::tag r::{U+E0072}
+:::tag s::{U+E0073}
+:::tag t::{U+E0074}
+:::tag u::{U+E0075}
+:::tag v::{U+E0076}
+:::tag w::{U+E0077}
+:::tag x::{U+E0078}
+:::tag y::{U+E0079}
+:::tag z::{U+E007A}
+:::tag {::{U+E007B}
+:::tag |::{U+E007C}
+:::tag }::{U+E007D}
+:::tag ~::{U+E007E}
+:::tag ::{U+E007F}
+:::tag del::{U+E007F}
+:::tag end::{U+E007F}
+:::end tag::{U+E007F}
+:::tag cancel::{U+E007F}
+:::tag cancel::{U+E007F}
+#Hotstring c0
+
+; For some reason, the black flag is the true flag character for flag-tag sequence characters, but the white flag is the flag character for some zwj stylization characters (ie, the rainbow flag).
+:::flag::🏴
+:::black flag::🏴
+:::blackflag::🏴
+:::white flag::🏳️
+:::whiteflag::🏳️
+
 :::macron::̄
 :::breve::̆
 :::inverted breve::̑
@@ -62,7 +393,6 @@ CapsLock::
 ;I'd like to have :::ring:: default to overring, but that is also an emoji bbcode, so we can't use it as long as we're using the same escape pattern...
 
 ;Could also do stuff like...
-:::a'::á ;by the way, this does work for both cases, a' → á and A' → Á by default
 :::a~::ã
 :::n~::ñ
 :::~a::ã
@@ -122,20 +452,41 @@ CapsLock::
 :::theta::θ
 :::Theta::Θ
 
-
 ; ASCII "C0" control characters. See https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C0_controls.
 ; For these, you must use unicode-style {U+hex} directives in AHK; you cannot use eg {ASC 7} or you will get the • bullet point character of Code page 437 instead of the ASCII bel character. Also note that many systems will not take this input correctly. My text editor, notepad++, seems to take them right, however.
 :::nul::{U+0} ; (My text editor could handle me including a literal example of this character easily... but it makes git treat this file like binary ha ha! So, no example here.)
+:::soh::{U+1} ; 
+:::stx::{U+2} ; 
+:::etx::{U+3} ; 
+:::eot::{U+4} ; 
+:::eno::{U+5} ; 
 :::ack::{U+6} ; 
 :::bel::{U+7} ; 
+:::bs::{U+8} ; 
 :::tab::{U+9} ; 	 a true tab character (not an indent made of spaces)
 :::lf::{U+A} ; a true, modern newline
+:::vt::{U+B} ;  I think this is a vertical tab (whatever that means)
 :::formfeed::{U+C} ;  (I would like to make this :ff:, but that's already ﬀ, alas.)
-:::cr::{U+D} ; an impostor, old newline component
+:::cr::{U+D} ; an impostor, old newline component; \r
+:::so::{U+E} ; 
+:::si::{U+F} ; 
+:::dle::{U+10} ; 
+:::dc1::{U+11} ; 
+:::dc2::{U+12} ; 
+:::dc3::{U+13} ; 
+:::dc4::{U+14} ; 
 :::syn::{U+16} ; 
 :::nak::{U+15} ; 
-:::esc::{U+1B} ;  can be useful for terminal coloring I guess.
-; todo, perhaps: rest of C0
+:::etb::{U+17} ; 
+:::can::{U+18} ; 
+:::em::{U+19} ; 
+:::sub::{U+1A} ; 
+:::esc::{U+1B} ;  can be useful for terminal coloring!
+:::fs::{U+1C} ; 
+:::gs::{U+1D} ; 
+:::rs::{U+1E} ; 
+:::us::{U+1F} ;  — usually the emoji ahk script I have pre-empts this, and makes it 🇺🇸 instead.
+:::sp::{U+20} ;   occasionally, very rarely, it's useful to enter a space character without actually pressing space.
 
 
 ;There could also be a multi-step compose, where a!b → c, c!d → e, etc. Eg ::a!b::c ::c!d::e. Changing back to the hotstring Z0 here could help. Or something.
@@ -311,6 +662,7 @@ Shift & ^::SEND ∧ ; logical and
 Shift & *::SEND ⋅ ; dot (multiply)
 Shift & |::SEND ⊢ ; turnstile (useful in logic)
 Shift & 3::SEND № ; numero sign (similar use to the number sign, #, which is above 3, and I can't write a literal # in here because it's a ahk modifier)
+Shift & 7::SEND ⅋ ; turned ampersand (& is above 7)
 Shift & %:: SEND ÷ ; division sign
 Shift & $::SEND £ ; pound sterling
 
