@@ -19,6 +19,14 @@ CapsLock::
 
 ; Typically I make misc additions here:
 
+::: ::　
+:::think::🤔
+:::thinking::🤔
+:::inf::∞
+:::00::∞
+:::I::ɪ
+:::ij::ĳ
+:::party::🥳
 :::salute::🫡
 :::shush::🤫
 :::!!::‼
@@ -512,8 +520,8 @@ CapsLock::
 :::thinspace:: 
 :::thin space:: 
 :::thinsp:: 
-:::thsp:: :
-:::tsp:: :
+:::thsp:: 
+:::tsp:: 
 :::hairspace::{U+200A}
 :::hair space::{U+200A}
 :::hairsp::{U+200A}
@@ -615,6 +623,15 @@ Alt & n::SEND ñ ; enye (n with tilde from spanish) (lower case, you can shift-i
 Alt & -::SEND ⹀ ; double hyphen
 Alt & 0::SEND ∞ ; infinity
 Alt & !::SEND ‽ ; interrobang ; This is probably a bad binding because you actually have to hit 1 with the shift off... but plain caps and caps+shift were taken with good reason, and afaict I can't caps+alt+shift
+Alt & 3::SEND ɛ ; ipa vowel for e in dress
+Alt & $::SEND ¤ ; generic currency sign
+Alt & ^::SEND ↑ ; up arrow
+Shift & V::Send ↓ ; down arrow
+
+
+; Capslock+Alt+Shift+something ... doesn't seem to work right now
+!+n::SEND ɲ
+; todo: would be fun to also be able to send ɳ. ŋ is already covered, by Caps+g
 
 Alt & Space::SEND % respace(Clipboard) ; respace text with random spaces in, like in a pdf or fixed-width ascii document
 Alt & SC028::SEND % "{ASC 34}" . respace(Clipboard) . "{ASC 34}" ; respace and quote text (34 is ascii code for double quote)
@@ -623,7 +640,7 @@ Insert::SENDINPUT % ToFilename(Clipboard)
 Alt & Insert::SENDINPUT % ToLower(Clipboard)
 Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% ; current date/time ; Mon, 2020-01-13 08:21:01
 Ctrl & D::SENDINPUT %A_YYYY%-%A_MM%-%A_DD% ; current date ; 2020-01-13
-Alt & V::msgbox You are using Carpboard under AutoHotKey version %A_AhkVersion%
+Alt & V::msgbox You are using Carpboard version (untracked version) under AutoHotKey version %A_AhkVersion%
 
 ; These are the ones that require you to hold shift
 ; #If Getkeystate("Capslock","p") and Getkeystate("Shift","p") failed mysteriously,
@@ -637,6 +654,7 @@ Shift & E::SEND ∃ ; exists
 Shift & F::SEND ❧ ; fleuron (U+2767 ❧ ROTATED FLORAL HEART BULLET (HTML &#10087;) (Dingbats))
 Shift & G::SEND Ŋ ; capital ng letter (voiced velar nasal) "eng"
 Shift & I::SEND ɪ ; small capital I, useful as the https://en.wikipedia.org/wiki/Near-close_near-front_unrounded_vowel of IPA
+Shift & J::SEND ʲ ; https://en.wikipedia.org/wiki/Palatalization_(phonetics)
 Shift & L::SEND Ł ; slashed L
 Shift & N::SEND ∩ ; intersection
 Shift & O::SEND ∘ ; ring
@@ -665,6 +683,7 @@ Shift & 3::SEND № ; numero sign (similar use to the number sign, #, which is a
 Shift & 7::SEND ⅋ ; turned ampersand (& is above 7)
 Shift & %:: SEND ÷ ; division sign
 Shift & $::SEND £ ; pound sterling
+Shift & 0::SEND ∞ ; infinity
 
 Shift & Insert::SENDINPUT % ToUpper(Clipboard)
 
