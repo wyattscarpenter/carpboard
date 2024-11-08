@@ -713,9 +713,9 @@ ToFilename(s){
   ;tmp := StrReplace(tmp, "@", " at ") ; since most @s are usernames nowadays this turns out to be a bad substitution, better to just remove them.
   tmp := StrReplace(tmp, "_", " ")
   tmp := StrReplace(tmp, "-", " ") ; it's legitimate to have semantic hyphens in a file name, but I often like to copy file names that use them just as spaces.
-  tmp := StrReplace(tmp, ".", " ")
   tmp := RegExReplace(tmp, "\$(\d*)\.(\d*)", Replacement := " $1 dollars $2 cents ")
   tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
+  tmp := StrReplace(tmp, ".", " ")
   tmp := RegExReplace(tmp, "\s+", Replacement := " ")
   tmp := RegExReplace(tmp, "[^\w\ \-]", "")
   tmp := respace(tmp)
