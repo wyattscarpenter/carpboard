@@ -714,10 +714,6 @@ ToFilename(s){
   tmp := StrReplace(tmp, "_", " ")
   tmp := StrReplace(tmp, "-", " ") ; it's legitimate to have semantic hyphens in a file name, but I often like to copy file names that use them just as spaces.
   tmp := StrReplace(tmp, ".", " ")
-  tmp := StrReplace(tmp, "ü", "ue") ; these are for german umlauts, but might collide with diaereses
-  tmp := StrReplace(tmp, "ö", "oe")
-  tmp := StrReplace(tmp, "ä", "ae")
-  tmp := StrReplace(tmp, "ñ", "ny") ; spanish
   tmp := RegExReplace(tmp, "\$(\d*)\.(\d*)", Replacement := " $1 dollars $2 cents ")
   tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
   tmp := RegExReplace(tmp, "\s+", Replacement := " ")
