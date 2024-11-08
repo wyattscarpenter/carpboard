@@ -2,6 +2,8 @@
 #SingleInstance FORCE
 #InstallKeybdHook
 
+; :*:'::’ ; this extremely powerful line makes the apostrophe/straight quote key actually type a fancy apostrophe...
+
 ; KeyHistory ; uncomment this line if some hotkey is giving you trouble and you need to review scancodes
 
 ; "As for the CapsLock modifier, this script is able to recognize if you are using it as a modifier or are just toggling it."
@@ -18,8 +20,14 @@ CapsLock::
 #Hotstring O ? Z
 
 ; Typically I make misc additions here:
-
-::: ::　
+:::gamer::🎮
+:::keycap::⃣
+:::Combining Enclosing Keycap::⃣
+:::father father::君君臣臣父父子子
+:::slight smile::🙂
+:::slight::🙂
+:::)::🙂
+:::ideographic space::　
 :::think::🤔
 :::thinking::🤔
 :::inf::∞
@@ -71,6 +79,8 @@ CapsLock::
 :::w'::ẃ
 :::y'::ý
 :::z'::ź
+:::o macron::ō
+:::o-::ō
 
 :::zwj::‍
 :::F::🇫
@@ -576,6 +586,7 @@ m::SEND — ; em dash
 n::SEND – ; en dash
 o::SEND ° ; degree
 p::SEND ¶ ; this is a pilcrow. for some reason notepad displays it as ❡
+q::SEND ― ; quotation dash (horizontal bar)
 r::SEND я ; Cyrillic letter ya (lowercase)
 s::SEND ∫ ; integral
 t::SEND † ; dagger
@@ -641,6 +652,8 @@ Alt & Insert::SENDINPUT % ToLower(Clipboard)
 Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% ; current date/time ; Mon, 2020-01-13 08:21:01
 Ctrl & D::SENDINPUT %A_YYYY%-%A_MM%-%A_DD% ; current date ; 2020-01-13
 Alt & V::msgbox You are using Carpboard version (untracked version) under AutoHotKey version %A_AhkVersion%
+Alt & W::run https://en.wikipedia.org/wiki/Special:Search
+Alt & T::run https://en.wiktionary.org/wiki/Special:Search
 
 ; These are the ones that require you to hold shift
 ; #If Getkeystate("Capslock","p") and Getkeystate("Shift","p") failed mysteriously,
