@@ -20,11 +20,15 @@ CapsLock::
 #Hotstring O ? Z
 
 ; Typically I make misc additions here:
+
+:::=?::≟
+:::?=::≟
 :::gamer::🎮
 :::keycap::⃣
 :::Combining Enclosing Keycap::⃣
 :::father father::君君臣臣父父子子
 :::slight smile::🙂
+:::slight_smile::🙂
 :::slight::🙂
 :::)::🙂
 :::ideographic space::　
