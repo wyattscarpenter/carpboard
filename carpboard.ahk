@@ -20,7 +20,13 @@ CapsLock::
 #Hotstring O ? Z
 
 ; Typically I make misc additions here:
-
+:::1/2::½
+:::half::½
+:::c/o::℅
+:::care of::℅
+:::a/c:::℀
+:::account::℀
+:::zh::ʒ
 :::=?::≟
 :::?=::≟
 :::gamer::🎮
@@ -629,7 +635,9 @@ Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank m
 Alt & `::SEND ã ; a with tilde from portuguese (` is the same key as ~ and writing ~ here doesn't work)
 Alt & a::SEND ä ; a umlaut/diaeresis (lower case, you can shift-insert to uppercase remember?)
 Alt & e::SEND ë ; e diaeresis
+Alt & f::SEND 『 ; japanese inner quotation mark begin
 Alt & i::SEND ï ; i diaeresis
+Alt & j::SEND 』 ; japanese inner quotation mark end
 Alt & o::SEND ö ; o umlaut/diaeresis
 Alt & u::SEND ü ; u umlaut/diaeresis
 Alt & /::SEND ø ; slashed o
@@ -657,7 +665,8 @@ Alt & D::SENDINPUT %A_DDD%, %A_YYYY%-%A_MM%-%A_DD% %A_Hour%:%A_Min%:%A_Sec% ; cu
 Ctrl & D::SENDINPUT %A_YYYY%-%A_MM%-%A_DD% ; current date ; 2020-01-13
 Alt & V::msgbox You are using Carpboard version (untracked version) under AutoHotKey version %A_AhkVersion%
 Alt & W::run https://en.wikipedia.org/wiki/Special:Search
-Alt & T::run https://en.wiktionary.org/wiki/Special:Search
+!t::InputBox url, "Open URL", "Enter the URL you want to open:" && run url ; todo: figure this out, and I guess commit to either AHK v1 or v2
+;Alt & T::run InputBox, "Search wiktionary").Value
 
 ; These are the ones that require you to hold shift
 ; #If Getkeystate("Capslock","p") and Getkeystate("Shift","p") failed mysteriously,
@@ -721,7 +730,7 @@ ToFilename(s){
   tmp := RegExReplace(tmp, "\$(\d*)", Replacement := " $1 dollars ")
   tmp := StrReplace(tmp, ".", " ")
   tmp := RegExReplace(tmp, "\s+", Replacement := " ")
-  tmp := RegExReplace(tmp, "[^\w\ \-]", "")
+  tmp := RegExReplace(tmp, "[^\w\ \-]", "") ; this is bad at dealing with non-ascii (or something) text (it just destroys it), which is not ideal.
   tmp := respace(tmp)
   return tmp
 }
