@@ -20,6 +20,26 @@ CapsLock::
 #Hotstring O ? Z
 
 ; Typically I make misc additions here:
+:::asterism::⁂
+:::***::⁂
+:::l/::ł
+:::/l::ł
+:::slashed l::ł
+:::inverse bullet::◘
+:::hollow bullet::◦
+:::white bullet::◦
+:::bullet operator::∙
+:::wj::{U+2060}
+:::root::√
+:::square root::√
+:::radical::√
+:::surd::√
+:::cube root::∛
+:::fourth root::∜
+:::hypercube root::∜
+:::squared::²
+:::cubed::³
+:::hypercubed::⁴
 :::1/2::½
 :::half::½
 :::c/o::℅
@@ -617,7 +637,6 @@ Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank m
 .::SEND ∴ ; therefore
 ,::SEND ∵ ; because
 -::SEND ± ; plus or minus
-*::SEND ⁂ ; asterism
 
 ;superscript numbers ;TODO: subscript numbers? perhaps using alt? maybe eg :2:, although that should probably be used for keycap digit emojis eg 2️⃣
 0::SEND ⁰
@@ -631,7 +650,6 @@ Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank m
 8::SEND ⁸
 9::SEND ⁹
 
-;Possibly going to replace this block with hotstrings like :a~: and such...
 Alt & `::SEND ã ; a with tilde from portuguese (` is the same key as ~ and writing ~ here doesn't work)
 Alt & a::SEND ä ; a umlaut/diaeresis (lower case, you can shift-insert to uppercase remember?)
 Alt & e::SEND ë ; e diaeresis
@@ -650,7 +668,7 @@ Alt & 3::SEND ɛ ; ipa vowel for e in dress
 Alt & $::SEND ¤ ; generic currency sign
 Alt & ^::SEND ↑ ; up arrow
 Shift & V::Send ↓ ; down arrow
-
+Alt & *::SEND ⋅ ; dot (multiply)
 
 ; Capslock+Alt+Shift+something ... doesn't seem to work right now
 !+n::SEND ɲ
@@ -703,7 +721,7 @@ Shift & SC035::SENDINPUT ¿ ; inverted question mark ; sc035 in place of a liter
 ;Shift & Space::SEND _ ; underline for typing variable names faster ; I never used this
 Shift & Space::SEND {U+00A0} ; non-breaking space
 Shift & ^::SEND ∧ ; logical and
-Shift & *::SEND ⋅ ; dot (multiply)
+Shift & *::SEND • ; bullet (typography)
 Shift & |::SEND ⊢ ; turnstile (useful in logic)
 Shift & 3::SEND № ; numero sign (similar use to the number sign, #, which is above 3, and I can't write a literal # in here because it's a ahk modifier)
 Shift & 7::SEND ⅋ ; turned ampersand (& is above 7)
