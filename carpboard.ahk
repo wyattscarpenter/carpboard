@@ -20,6 +20,22 @@ CapsLock::
 #Hotstring O ? Z
 
 ; Typically I make misc additions here:
+:::=>::⇒
+:::fat arrow::⇒
+:::rightwards fat arrow::⇒
+:::rightwards double arrow::⇒
+
+:::vs1::{U+FE00}
+
+;bidi (bidirectional text) controls, which I got from https://www.w3.org/International/questions/qa-bidi-unicode-controls ; incomplete coverage
+:::lri::{U+2066}
+:::left-to-right isolate::{U+2066}
+:::ltr isolate::{U+2066}
+:::right-to-left isolate::{U+2067}
+:::rli::{U+2067}
+:::rtl isolate::{U+2067}
+:::pdi::{U+2069}
+
 :::asterism::⁂
 :::***::⁂
 :::l/::ł
