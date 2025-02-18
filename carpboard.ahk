@@ -685,6 +685,9 @@ Alt & $::SEND ¤ ; generic currency sign
 Alt & ^::SEND ↑ ; up arrow
 Shift & V::Send ↓ ; down arrow
 Alt & *::SEND ⋅ ; dot (multiply)
+Alt & b::SEND • ; bullet (typography)
+Alt & h::SEND ◦ ; hollow bullet (typography)
+; Shift & Alt & b::SEND ◦ ; hollow bullet (typography)
 
 ; Capslock+Alt+Shift+something ... doesn't seem to work right now
 !+n::SEND ɲ
