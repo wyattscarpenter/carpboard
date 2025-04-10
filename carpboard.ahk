@@ -20,6 +20,15 @@ CapsLock::
 #Hotstring O ? Z
 
 ; Typically I make misc additions here:
+:::whale::🐋
+:::robot::🤖
+:::hyphen::‐ ; a proper U+2010 hyphen
+:::nodding::🙂‍↕️ ; this is an emoji zwj seequence that most vendors recognise these days
+:::nod::🙂‍↕️
+:::head shaking vertically::🙂‍↕️
+:::esh::ʃ
+:::integral::∫
+:::middle dot::·
 :::=>::⇒
 :::fat arrow::⇒
 :::rightwards fat arrow::⇒
