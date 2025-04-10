@@ -623,11 +623,19 @@ CapsLock::
 :::IAT::{U+FFFB} ; ￻ Interlinear annotation terminator — marks end of annotated text
 
 #If Getkeystate("Capslock","p")
+
 ; These next three are combiner keys, but remember: you have to press CapsLock first for chords in this program.
 Alt::Edit ; mnemonic: ALTer the program
 Ctrl::Run, cmd ; this opens cmd to the carpboard folder, which is nice for me to git commit edits to carpboard ; mnemonic: CONTROL the source code
 Shift::Reload ; mnemonic: SHIFT over to the newer version
 SC028::SEND ´ ; acute (symbol) (reverse of grave (symbol)) — ie, "fronttick" as opposed to "backtick" ` ; a literal ' was giving me some trouble here, but the scan code SC028 did the trick
+
+; Capslock plus arrow keys sends arrow glyphs.
+Left::Send ←
+Right::Send →
+Up::Send ↑
+Down::Send ↓
+
 a::SEND ∝ ; proportionality
 b::SEND ♪ ; eighth note (to demonstrate music)
 c::SEND ¢ ; cents
