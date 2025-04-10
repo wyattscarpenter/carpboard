@@ -636,7 +636,13 @@ Right::Send →
 Up::Send ↑
 Down::Send ↓
 
-; TODO: Capslock plus jkl;
+; Capslock plus jkl; moves the cursor, in a scheme I like to call "almost-vi" mode. But it's actually in the right position lol (could bind these to a hold-a layer in moonlander instead?)
+; perhaps caps uiop should be bound to Home PgDn PgUp End... or if in moonlander, perhaps bind them to jkl; on a hold-s layer.
+; caps m and / could be backspace and del (,. would be fine for "delete next/prev line", but there are no such keys! nor other general way to trigger those behaviors, I suppose) or a hold-d layer in moonlander (pleasing, because d sounds like delete, which these things do).
+j::Left
+k::Down
+l::Up
+`;::Right ; ` is an escape character in ahk (otherwise ; would start a comment)
 
 a::SEND ∝ ; proportionality
 b::SEND ♪ ; eighth note (to demonstrate music)
@@ -646,7 +652,6 @@ e::SEND ∈ ; element of
 h::SEND ʰ ; aspiration mark
 i::SEND ı ; the dotless i, the abomination
 g::SEND ŋ ; ng letter (voiced velar nasal) "eng"
-l::SEND ł ; slashed l
 m::SEND — ; em dash
 n::SEND – ; en dash
 o::SEND ° ; degree
@@ -665,8 +670,6 @@ z::SEND ß ; Eszett from german (lowercase) bound to z because my s key was take
 SC035::SENDINPUT ¯\_(ツ)_/¯ ; shruggie ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
 \::SENDINPUT ¯\\\_(ツ)\_/¯ ; reddit-escaped shruggie
 `::SEND “ ; fancy left double quote
-f::SEND 「 ; left quotation mark japanese
-j::SEND 」 ; right quotation mark japanese
 ;Space::SEND - ; hyphen for programming in lisp faster ; I never used this
 Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank me at some point. I may replace it with █ or replace nbsp with █ and replace this with nbsp.
 .::SEND ∴ ; therefore
@@ -688,9 +691,10 @@ Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank m
 Alt & `::SEND ã ; a with tilde from portuguese (` is the same key as ~ and writing ~ here doesn't work)
 Alt & a::SEND ä ; a umlaut/diaeresis (lower case, you can shift-insert to uppercase remember?)
 Alt & e::SEND ë ; e diaeresis
-Alt & f::SEND 『 ; japanese inner quotation mark begin
+Alt & f::SEND 「 ; left quotation mark japanese ; If I could figure out how to get caps-alt-shift to work I would make that 『 ; japanese inner quotation mark begin
 Alt & i::SEND ï ; i diaeresis
-Alt & j::SEND 』 ; japanese inner quotation mark end
+Alt & j::SEND 」 ; right quotation mark japanese; If I could figure out how to get caps-alt-shift to work I would make that 』 ; japanese inner quotation mark end
+Alt & l::SEND ł ; slashed l
 Alt & o::SEND ö ; o umlaut/diaeresis
 Alt & u::SEND ü ; u umlaut/diaeresis
 Alt & /::SEND ø ; slashed o
