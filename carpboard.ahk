@@ -636,6 +636,8 @@ Right::Send →
 Up::Send ↑
 Down::Send ↓
 
+; TODO: Capslock plus jkl;
+
 a::SEND ∝ ; proportionality
 b::SEND ♪ ; eighth note (to demonstrate music)
 c::SEND ¢ ; cents
