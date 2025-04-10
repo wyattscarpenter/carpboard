@@ -431,7 +431,7 @@ CapsLock::
 :::double acute::̋
 :::acute below::̗
 :::grave::̀
-; Regarding the subsequent line: the ` is a special character in ahk (among many, many special characters...), so you have to have two here to represent just one. The code is :`:, for a ̀
+; Regarding the subsequent line: the ` is a special character in ahk (among many, many special characters...), so you have to have two here to represent just one. The code is :`:, for a ̀  (combining grave accent)
 :::``::̀
 :::grave tone::̀
 :::double grave::̏
