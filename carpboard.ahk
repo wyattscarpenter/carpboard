@@ -516,14 +516,53 @@ CapsLock::
 :::pbuh::ﷺ
 :::schwa::ə
 
+; greek
+; nota bene: I have the AHK feature turned on where eg :lambda: makes λ, but :Lambda:, and :LAMBDA: make Λ.
 :::alpha::α
-:::Alpha::Α
-:::ALPHA::Α
 :::beta::β
-:::Beta::Β
-; todo: rest of greek alphabet.
+:::gamma::γ
+:::delta::δ
+:::epsilon::ε
+:::zeta::ζ
+:::eta::η
 :::theta::θ
-:::Theta::Θ
+:::iota::ι
+:::kappa::κ
+:::lambda::λ
+:::mu::μ
+:::nu::ν
+:::xi::ξ
+:::omicron::ο
+:::pi::π
+:::rho::ρ
+:::sigma::σ
+:::sigma final::ς
+:::tau::τ
+:::upsilon::υ
+:::phi::φ
+:::chi::χ
+:::psi::ψ
+:::omega::ω
+;  Archaic local variants
+:::digamma::ϝ                  ; U+03DD GREEK SMALL LETTER DIGAMMA
+:::heta::ͱ                     ; U+0371 GREEK SMALL LETTER HETA
+:::san::ϻ                      ; U+03FB GREEK SMALL LETTER SAN
+:::koppa::ϙ                    ; U+03D9 GREEK SMALL LETTER KOPPA
+:::tsan::ͷ                     ; U+0377 GREEK SMALL LETTER PAMPHYLIAN DIGAMMA (also used for the identical symbol Tsan)
+:::pamphylian digamma::ͷ       ; U+0377 GREEK SMALL LETTER PAMPHYLIAN DIGAMMA
+:::sampi::ͳ                    ; U+0373 GREEK SMALL LETTER SAMPI
+:::sho::ϸ                      ; U+03F8 GREEK SMALL LETTER SHO
+:::stigma::ϛ                   ; U+03DB GREEK SMALL LETTER STIGMA ; which is also digamma I think
+; Extra-archaic local variants
+:::archaic-koppa::ϟ            ; U+03DF GREEK SMALL LETTER ARCHAIC KOPPA
+:::archaic-sampi::ϡ            ; U+03E1 GREEK SMALL LETTER ARCHAIC SAMPI
+:::yot::ϳ                      ;U+03F3 GREEK LETTER YOT ; "Yot, a letter used in Greek historical linguistics." — https://en.wiktionary.org/wiki/%CF%B3
+; getting less and lett greek here...
+:::ou::ȣ ; https://en.wikipedia.org/wiki/Ou_(ligature)
+:::omicron upsilon:: 〃
+:::small capital ou::ᴕ
+:::monograph uk::ꙋ
+:::letter uk::ѹ
 
 ; ASCII "C0" control characters. See https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C0_controls.
 ; For these, you must use unicode-style {U+hex} directives in AHK; you cannot use eg {ASC 7} or you will get the • bullet point character of Code page 437 instead of the ASCII bel character. Also note that many systems will not take this input correctly. My text editor, notepad++, seems to take them right, however.
