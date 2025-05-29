@@ -35,6 +35,7 @@ CapsLock::
 :::rightwards double arrow::⇒
 
 :::vs1::{U+FE00}
+:::vs17::{U+E0100}
 
 ;bidi (bidirectional text) controls, which I got from https://www.w3.org/International/questions/qa-bidi-unicode-controls ; incomplete coverage
 :::lri::{U+2066}
@@ -557,7 +558,8 @@ CapsLock::
 :::archaic-koppa::ϟ            ; U+03DF GREEK SMALL LETTER ARCHAIC KOPPA
 :::archaic-sampi::ϡ            ; U+03E1 GREEK SMALL LETTER ARCHAIC SAMPI
 :::yot::ϳ                      ;U+03F3 GREEK LETTER YOT ; "Yot, a letter used in Greek historical linguistics." — https://en.wiktionary.org/wiki/%CF%B3
-; getting less and lett greek here...
+
+; These are slightly related to greek but not really...
 :::ou::ȣ ; https://en.wikipedia.org/wiki/Ou_(ligature)
 :::omicron upsilon:: 〃
 :::small capital ou::ᴕ
@@ -632,6 +634,7 @@ CapsLock::
 :::hrsp::{U+200A}
 :::hsp::{U+200A}
 :::nnbsp:: 
+:::zwsp::{U+200B}
 
 :::dotless i::ı
 :::dotless I::I
@@ -710,7 +713,7 @@ SC035::SENDINPUT ¯\_(ツ)_/¯ ; shruggie ; a literal / was giving me some troub
 \::SENDINPUT ¯\\\_(ツ)\_/¯ ; reddit-escaped shruggie
 `::SEND “ ; fancy left double quote
 ;Space::SEND - ; hyphen for programming in lisp faster ; I never used this
-Space::SEND ​ ; zero width space ; I'm almost certain this is going to prank me at some point. I may replace it with █ or replace nbsp with █ and replace this with nbsp.
+Space::SEND █ ; TODO: put zero width space some place else, like in the colon codes. Get nbsp off the shift space as well.
 .::SEND ∴ ; therefore
 ,::SEND ∵ ; because
 -::SEND ± ; plus or minus
