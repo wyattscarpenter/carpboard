@@ -712,8 +712,7 @@ z::SEND ß ; Eszett from german (lowercase) bound to z because my s key was take
 SC035::SENDINPUT ¯\_(ツ)_/¯ ; shruggie ; a literal / was giving me some trouble here, but the scan code SC035 did the trick
 \::SENDINPUT ¯\\\_(ツ)\_/¯ ; reddit-escaped shruggie
 `::SEND “ ; fancy left double quote
-;Space::SEND - ; hyphen for programming in lisp faster ; I never used this
-Space::SEND █ ; TODO: put zero width space some place else, like in the colon codes. Get nbsp off the shift space as well.
+Space::SEND █
 .::SEND ∴ ; therefore
 ,::SEND ∵ ; because
 -::SEND ± ; plus or minus
@@ -802,8 +801,7 @@ Shift & SC028::SEND ” ; fancy right double quote ; sc028 in place of a literal
 Shift & {::SEND ‘ ; fancy left single quote
 Shift & }::SEND ’ ; fancy right single quote
 Shift & SC035::SENDINPUT ¿ ; inverted question mark ; sc035 in place of a literal ? or /
-;Shift & Space::SEND _ ; underline for typing variable names faster ; I never used this
-Shift & Space::SEND {U+00A0} ; non-breaking space
+Shift & Space::SEND ░ ; Light shade ; figure out how to send ▒ (medium shade) with a good key combo
 Shift & ^::SEND ∧ ; logical and
 Shift & *::SEND • ; bullet (typography)
 Shift & |::SEND ⊢ ; turnstile (useful in logic)
