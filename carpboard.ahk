@@ -50,6 +50,11 @@ CapsLock::
 :::leftwards double arrow::⇒
 :::rightwards paired arrows::⇉
 :::leftwards paired arrows::⇇
+:::angle bracket left::⟨
+:::left angle bracket::⟨
+:::angle bracket right::⟩
+:::right angle bracket::⟩
+:::angle brackets::⟨⟩
 
 :::vs1::{U+FE00}
 :::vs17::{U+E0100}
@@ -812,8 +817,8 @@ Shift & Z::SEND ẞ ; Eszett from german (uppercase) bound to z because my s key
 
 Shift & =::SEND ≡ ; triple bar (sometimes "logically identical to")
 Shift & -::SEND ¯ ; overline
-Shift & <::SEND ← ; left arrow
-Shift & >::SEND → ; right arrow
+Shift & <::SEND ⟨ ; angle bracket left
+Shift & >::SEND ⟩ ; angle bracket right
 Shift & SC028::SEND ” ; fancy right double quote ; sc028 in place of a literal " or '
 Shift & {::SEND ‘ ; fancy left single quote
 Shift & }::SEND ’ ; fancy right single quote
