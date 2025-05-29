@@ -14,6 +14,7 @@ CapsLock::
     SetCapsLockState, % GetKeyState("CapsLock","T") ? "Off" : "On"
 
 ; I've decided to add some bbcode-style hotstrings, for greater extension and mnemonicity. Not yet comprehensive. Some are just experiments See https://www.autohotkey.com/docs/v1/Hotstrings.htm for info about the wacky options I used here.
+; eventually you should probably be able to type any unicode character name this way to get it, in addition to my mnemonics and the CLDR names.
 ; I'm considering using changing to use ;;foo;; as the syntax here, since unlike :foo: I can't think of anything else that uses it. Or perhaps foo;;foo2
 ; Note that almost no text editors compose all of these right, but they should eventually display right in sophisticated text-viewers like the browser.
 #Hotstring EndChars :
@@ -26,6 +27,16 @@ CapsLock::
 :::nodding::🙂‍↕️ ; this is an emoji zwj seequence that most vendors recognise these days
 :::nod::🙂‍↕️
 :::head shaking vertically::🙂‍↕️
+:::shake::🙂‍↔️
+:::shaking::🙂‍↔️
+:::head shaking::🙂‍↔️
+:::head shaking horizontally::🙂‍↔️
+:::face shaking::🫨
+:::shaking face::🫨
+:::roll::🙄
+:::rolling::🙄
+:::rolling eyes::🙄
+:::face with rolling eyes::🙄
 :::esh::ʃ
 :::integral::∫
 :::middle dot::·
@@ -33,6 +44,12 @@ CapsLock::
 :::fat arrow::⇒
 :::rightwards fat arrow::⇒
 :::rightwards double arrow::⇒
+:::<=::⇐
+:::back fat arrow::⇐
+:::leftwards fat arrow::⇐
+:::leftwards double arrow::⇒
+:::rightwards paired arrows::⇉
+:::leftwards paired arrows::⇇
 
 :::vs1::{U+FE00}
 :::vs17::{U+E0100}
