@@ -21,6 +21,13 @@ CapsLock::
 #Hotstring O ? Z
 
 ; Typically I make misc additions here:
+:::+-::±
+:::+_::±
+:::plus minus::±
+:::-+::∓
+:::minus plus::∓
+:::fleuron::❧ ; (U+2767  ROTATED FLORAL HEART BULLET (HTML &#10087;) (Dingbats))
+:::flueron::❧ ; I often mistype this.
 :::whale::🐋
 :::robot::🤖
 :::hyphen::‐ ; a proper U+2010 hyphen
