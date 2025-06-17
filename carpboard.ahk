@@ -780,6 +780,7 @@ Shift & V::Send ↓ ; down arrow
 Alt & *::SEND ⋅ ; dot (multiply)
 Alt & b::SEND • ; bullet (typography)
 Alt & h::SEND ◦ ; hollow bullet (typography)
+Ctrl & /::SEND ／; U+FF0F Fullwidth Solidus (useful for use in windows filenames where regular / is not allowed) ; for some reason I can't get this to work, nor can I get Alt & / to print this. n-key rollover issue?
 ; Shift & Alt & b::SEND ◦ ; hollow bullet (typography)
 
 ; Capslock+Alt+Shift+something ... doesn't seem to work right now
